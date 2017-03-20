@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Welcome to Arcadia</title>
+    <link href="css/Normalize.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+       <div id="Wrapper">
+            <div class="Menu" style="float: left">
+
+                <span style="margin: 0 0 0 112px; width: 240px; height: 123px;">
+                    <a href="Default.aspx">
+                        <img src="Graphic/ArcadiaLogo-01.png" width="152" height="80" /></a>
+                </span>
+
+                <div class="menutext" style="float: right; height: 122px;">
+                    <%--<div class="dropdown">
+                        <div>
+                            <a href="#" style="margin: 0 40px 0 0;" class="dropbtn">COUNTRY</a>
+                            <div class="dropdown-content">
+                                <a href="Denmark.aspx">DENMARK</a>
+                                <a href="China.aspx">CHINA</a>
+                                <a href="Canada.aspx">BRITISH COLUMBIA</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <a href="#" style="margin: 0 40px 0 0;" class="dropbtn">NEWS</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <a href="#" style="margin: 0 40px 0 0;" class="dropbtn">LIVING</a>
+                            <div class="dropdown-content">
+                                <a href="#myModal1">INFRASTRUCTURE & TECHNOLOGY</a>
+                                <a href="#myModal2">ENERGY, WATER & WASTE</a>
+                                <a href="#myModal3">CITIZENS & LIVING</a>
+                                <a href="#myModal4">EDUCATION & EMPLOYMENT</a>
+                                <a href="#myModal5">MOBILITY</a>
+                                <a href="#myModal6">A MODEL CITY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <a href="#" style="margin: 0 40px 0 0;" class="dropbtn">HOW TO ENTER</a>
+                            <div class="dropdown-content">
+                                <a href="Carbonfootprint.aspx">CARBON FOOTPRINT</a>
+                                <a href="#">PHOTO CONTEST</a>
+                                <a href="Signup.aspx">SIGN UP</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div>
+                            <a href="#" style="margin: 0 40px 0 0;" class="dropbtn">ABOUT</a>
+                            <div class="dropdown-content">
+                                <a href="#">VISION</a>
+                                <a href="Contact.aspx">CONTACT</a>
+                                <a href="#">FAQ</a>
+                            </div>
+                        </div>
+                    </div>--%>
+                    <asp:Button ID="Button1" runat="server" Text="ENTER" CssClass="Signup" BorderStyle="None" OnClick="Button1_Click" Font-Names="OratorStd" Font-Size="Large" ForeColor="White" />
+                </div>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <div class="footer" style="float: left; margin: 0;">
+
+                <span style="margin: 0 0 0 112px; width: 240px; height: 123px;">
+                    <a href="Default.aspx">
+                        <img src="Graphic/ArcadiaLogo-01.png" width="152" height="80" /></a>
+                </span>
+
+                <div class="menutext" style="float: right; margin-top: 31px;">
+
+                    <div class="copyright-AOC2017">copyright AOC2017</div>
+                </div>
+            </div>
+       </div>
+    </form>
+</body>
+</html>

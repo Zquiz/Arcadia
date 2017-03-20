@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Data</title>
+    <link href="../css/MainCSS.css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/MainCSS.css" rel="stylesheet"/>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div id="Wrapper">
+        <div id="Banner"></div>
+        <div id="MenuContainer">
+            <div id="MenuItem">
+                <a href="SignUpData.aspx">
+                    <p>Sign up data gathering</p>
+                </a>
+            </div>
+            <div id="MenuItem">
+                <p>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False"/>
+                </p>
+            </div>
+            <div id="MenuItem">
+                <asp:Button ID="btnGlich" runat="server" Text="" OnClick="btnGlich_Click"/>
+            </div>
+        </div>
+        <div id="Content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="Footer">
+            <center>
+                <p>Copyright @ Arcadia</p>
+            </center>
+        </div>
+    </div>
+</form>
+</body>
+</html>
