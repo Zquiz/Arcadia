@@ -101,7 +101,7 @@ public partial class Puzzle : Page
                 _answerState = false;
                 Timer1.Interval = 3000;
                 btnSend.Enabled = false;
-                command.Disabled = false;
+                command.Disabled = true;
                 return //if yes
                     $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;:Don’t be so trusting in this world. I know you don’t know me but I will win your trust.<br />/<br />/<br />/";
             case 12: //if no
