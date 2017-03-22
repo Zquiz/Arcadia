@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                                       <div style="float: right; width: 0%">
-                                    <div class="STEPTEXT" style="width: 404px;">LOW CARBON EMITTING PRODUCT</div>
+                                    <div class="STEPTEXT" style="width: 450px;">LOW CARBON EMITTING PRODUCT</div>
                                     <div class="Imageuploadbox">
                                         <asp:FileUpload type="file" id="upload2" name="upload2" ViewStateMode="Enabled" accept="image/*" style="opacity: 0; width: 355px; height: 122px; float: left; position: absolute; z-index: 3;" onchange="document.getElementById('output2').src = window.URL.createObjectURL(this.files[0])" runat="server"/>
 
