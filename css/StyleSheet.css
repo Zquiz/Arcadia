@@ -120,6 +120,7 @@ a:active {
     color: #ffffff;
     position: absolute;
     text-align: center;
+    margin-top: 27px;
 }
 
 .A-MODEL-WORLD-TO-LIV-container {
@@ -410,7 +411,7 @@ a:active {
     width: auto;
     padding: 16px;
     top: 50%;
-    margin-top: 276px;
+    margin-top: 211px;
     color: #fff;
     font-weight: bold;
     font-size: 18px;
@@ -564,10 +565,15 @@ a:active {
 
 .ThreeDimage {
     height: 402px;
-    margin: 45px 74px 0 137px;
+   
     float: left;
 }
+.Signupbottom {
+    width: 123px;
+    height: 51px;
+    background-color: #02b795;
 
+}
 .ThreeDInfo {
     width: 642px;
     height: 413px;
@@ -595,7 +601,7 @@ a:active {
     letter-spacing: normal;
     text-align: center;
     color: #8c94a8;
-    margin: 27px 0 6px 0;
+    margin: 27px 0 25px 0;
     float: left;
 }
 
@@ -880,7 +886,7 @@ a:active {
     width: 123px;
     height: 51px;
     background-color: #7ed321;
-    margin: 33px 0 66px 75.5%;
+    margin: 33px 0 66px 82.5%;
     float: left;
 }
 

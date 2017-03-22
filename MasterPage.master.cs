@@ -41,9 +41,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
             css.Attributes["type"] = "text/css";
             css.Attributes["media"] = "all";
             Page.Header.Controls.Add(css);
-            meta.Name = "viewport";
-            meta.Content = "width=device-width, maximum-scale=1.0";
-            Page.Header.Controls.Add(meta);
+            //meta.Name = "viewport";
+            //meta.Content = "width=device-width, maximum-scale=1.0";
+           // Page.Header.Controls.Add(meta);
         }
         else
         {
@@ -51,9 +51,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
             css.Attributes["rel"] = "stylesheet";
             css.Attributes["type"] = "text/css";
             css.Attributes["media"] = "all";
-            meta.Name = "viewport";
-            meta.Content = "width=device-width, maximum-scale=1.0";
-            Page.Header.Controls.Add(meta);
+            //meta.Name = "viewport";
+            //meta.Content = "width=device-width, maximum-scale=1.0";
+            //Page.Header.Controls.Add(meta);
             Page.Header.Controls.Add(css);
         }
     }

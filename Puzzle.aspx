@@ -6,59 +6,22 @@
 <head runat="server">
     <title>Are you there????</title>
 
-    <style>
-        body {
-            background-color: black;
-            height: 100px;
-               Color: #1ff042;
-
-            font-family: 'monofonto';
-            text-shadow: 0px 0px 4px #1ff042;
-		
-        }
-
-
-        @font-face {
-            font-family: "monofonto";
-            src: url('monofonto.ttf');
-        }
-        p {
-            white-space: pre;
-            margin: 0;
-        }
-     
-
-        .textbox {
-            width: 80%;
-            height: 50px;
-            float: right;
-        }
-
-        .button {
-            width: 19%;
-            float: left;
-            height: 50px;
-        }
-
-        .fieldcontainer {
-            bottom: 0;
-            margin-top: 50px;
-            position: fixed;
-            width: 100%;
-        }
-    </style>
        <link href="css/Terminal.css" rel="stylesheet" />
 
        
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/Terminal.js"></script>
- 
+ <script>
+     $('body').click(function () {
+         $('#textfield').find('command').focus(); // works well on  ipad 
+     });
+ </script>
     <link href="css/Normalize.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server" autocomplete="off">
-        <div>
+        <div id="textarea">
             <asp:ScriptManager runat="server" ID="ScriptManager"></asp:ScriptManager>
           <%--  <asp:UpdatePanel runat="server">
 
@@ -74,7 +37,8 @@
                         <span></span>
                         <div id="cursor"></div>
                     </div>
-                    <input id="command" runat="server" type="text" maxlength="105"  autofocus />
+                                <div id="textfield"><input id="command" runat="server" style="height: 100%; width: 100%;" type="text" maxlength="105" /></div>
+
                     </div>
 
                    

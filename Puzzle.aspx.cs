@@ -121,7 +121,7 @@ public partial class Puzzle : Page
             case 15:
                 Timer1.Enabled = false;
                 command.Disabled = false;
-                Response.Redirect("Default.aspx");
+                Response.AppendHeader("Refresh", "5;URL=Default.aspx");
                 return "logging off";
 
 

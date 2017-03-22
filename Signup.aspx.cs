@@ -226,18 +226,25 @@ public partial class Signup : System.Web.UI.Page
     /// <param name="e"></param> 
     protected void Button1_Click(object sender, EventArgs e)
     {
+        try
+        {
+            if (upload.FileBytes.Length > 4194304 && upload2.FileBytes.Length > 4194304)
+            {
+                Label1.Text = "Max image size allowed is 4mb, please upload a new one";
 
-        if (upload.FileBytes.Length > 4194304 && upload2.FileBytes.Length > 4194304)
+            }
+            else
+            {
+                PanelChanger();
+                DrawBread();
+                DrawStepText();
+            }
+        }
+        catch (Exception)
         {
             Label1.Text = "Max image size allowed is 4mb, please upload a new one";
-
         }
-        else
-        {
-            PanelChanger();
-            DrawBread();
-            DrawStepText();
-        }
+       
        
     }
     /// <summary> 

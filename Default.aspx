@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div style="text-align: center; position: absolute; left: 45%; margin-top: 600px; z-index: 2;">
+    <div style="text-align: center; position: absolute; left: 49%; margin-top: 600px; z-index: 2;">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
@@ -148,7 +148,7 @@
                     <div class="Contentheader" style="color: white; width: 100%">ARCADIA’S FUTURISTIC DESIGN</div>
                     <div class="ThreeDimage">
                        
-                                                                            <iframe width="536" height="373" src="https://sketchfab.com/models/059787aff5eb4739a682af0a287553dd/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+                                                                            <iframe width="536" height="373" src="https://sketchfab.com/models/3ed3abaacbbd4cf89153857bb96d1fd8/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
                          <div class="ThreeDInfo" style="color: white;">Arcadia will provides protective features that you need for you and your family. The entire city will be covered with a solar panel dome that follows the movement of the sun that will power Arcadia. Working with the best architects in the world we provide green buildings that create a beautiful city skyline along with plenty of parks to surround.</div>
 
@@ -160,7 +160,7 @@
     <div class="blackcontentBox" style="background-color: #d8d8d8; height: 402px;">
         <div class="Bottomheadline" style="float: left">Be the first country to have the safest, cleanest and a completely self sustaining city in the world!</div>
         <div style="width: 261px; height: 70px; margin-top: 70px;">
-            <asp:Button ID="Button6" runat="server" Text="ENTER" CssClass="Signup" BorderStyle="None" Font-Names="OratorStd" Font-Size="36px" ForeColor="White" OnClick="Button2_Click" Width=" 261px" Height=" 70px" />
+            <asp:Button ID="Button6" runat="server" Text="ENTER" CssClass="Signupbottom" BorderStyle="None" Font-Names="OratorStd" Font-Size="36px" ForeColor="White" OnClick="Button2_Click" Width=" 261px" Height=" 70px" />
         </div>
     </div>
     <div id="myModal1" class="modalDialog">

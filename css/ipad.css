@@ -3,12 +3,18 @@
     padding: 0;
     background-color: #f8f8f8;
 }
-
+input, textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
 @font-face {
     font-family: "OratorStd";
     src: url('../OratorStd.otf');
 }
-
+@font-face {
+    font-family: "Calibri";
+    src:url('../Calibri.ttf');
+}
 a:link {
     text-decoration: none;
     color: white;
@@ -96,6 +102,7 @@ a:active {
 .Signup {
     width: 123px;
     height: 51px;
+    padding-top: 8px;
     background-color: #02b795;
 }
 
@@ -111,6 +118,7 @@ a:active {
     color: #ffffff;
     position: absolute;
     text-align: center;
+    margin-top: 27px;
 }
 
 .StepHeader {
@@ -125,6 +133,7 @@ a:active {
     color: #ffffff;
     position: absolute;
     text-align: center;
+    margin-top: 30px;
 }
 
 .A-MODEL-WORLD-TO-LIV-container {
@@ -158,6 +167,7 @@ a:active {
 .bannersignup {
     width: 261px;
     height: 70px;
+    padding-top: 13px;
     background-color: #02b795;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
@@ -411,11 +421,10 @@ a:active {
     z-index: 1;
     cursor: pointer;
     position: absolute;
-    top: 0;
     width: auto;
     padding: 16px;
     top: 50%;
-    margin-top: 276px;
+    margin-top: 211px;
     color: #fff;
     font-weight: bold;
     font-size: 18px;
@@ -569,10 +578,15 @@ a:active {
 
 .ThreeDimage {
     height: 402px;
-    margin: 45px 74px 0 137px;
+  
     float: left;
 }
-
+.Signupbottom {
+    width: 123px;
+    height: 51px;
+    background-color: #02b795;
+    padding-top: 15px;
+}
 .ThreeDInfo {
     width: 642px;
     height: 413px;
@@ -600,7 +614,7 @@ a:active {
     letter-spacing: normal;
     text-align: center;
     color: #8c94a8;
-    margin: 27px 0 6px 0;
+    margin: 27px 0 25px 0;
     float: left;
 }
 
@@ -879,14 +893,16 @@ a:active {
     background-color: #7ed321;
     margin: 33px 0 66px 0;
     float: right;
+    padding-top: 8px;
 }
 
 .Nextsignup2 {
     width: 123px;
     height: 51px;
     background-color: #7ed321;
-    margin: 33px 0 66px 75.5%;
+    margin: 33px 0 66px 82.5%;
     float: left;
+    padding-top: 8px;
 }
 
 .greydot {

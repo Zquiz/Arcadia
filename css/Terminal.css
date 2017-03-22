@@ -5,6 +5,11 @@
 
 body {
     background: black;
+    width: 100%;
+    height: 100%;
+    Color: #1ff042;
+    font-family: 'monofonto';
+    text-shadow: 0px 0px 4px #1ff042;
 }
 
 #cmd {
@@ -36,10 +41,39 @@ body {
 }
 
 #command {
-    width: 0;
-    height: 0;
+    width: 90%;
+    height: 90%;
     opacity: 0;
     resize: none;
     position: absolute;
     bottom: 0px;
+}
+@font-face {
+    font-family: "monofonto";
+    src: url('monofonto.ttf');
+}
+
+p {
+    white-space: pre;
+    margin: 0;
+}
+
+
+.textbox {
+    width: 80%;
+    height: 50px;
+    float: right;
+}
+
+.button {
+    width: 19%;
+    float: left;
+    height: 50px;
+}
+
+.fieldcontainer {
+    bottom: 0;
+    margin-top: 50px;
+    position: fixed;
+    width: 100%;
 }
