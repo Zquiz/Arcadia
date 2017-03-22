@@ -3,25 +3,69 @@ using System.Drawing;
 using System.IO;
 using System.Web;
 using System.Web.UI.HtmlControls;
-
+using System.Web.UI.WebControls;
 using ASP;
 
 public partial class Signup : System.Web.UI.Page
 {
-    //Reason fields are static is because of the update panels postback
+    //Reason fields are static is because of the update panels postback 
     private static int _step;
     private readonly Function _myFunction = new Function();
-    private static HttpPostedFile _uploadName;
-    private static HttpPostedFile _upload2Name;
+    
     private static int _ghgNumber;
+    string highfileName = "";
 
-    /// <summary>
-    /// page load method that will make sure it panels and textboxs is reset if needed
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+    string lowFileName = "";
+
+    /// <summary> 
+    /// page load method that will make sure it panels and textboxs is reset if needed 
+    /// </summary> 
+    /// <param name="sender"></param> 
+    /// <param name="e"></param> 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //If first time page is submitted and we have file in FileUpload control but not in session 
+        // Store the values to SEssion Object 
+        if (Session["upload"] == null && upload.HasFile)
+        {
+            Session["upload"] = upload;
+            //Label1.Text = FileUpload1.FileName;
+        }
+        // Next time submit and Session has values but FileUpload is Blank 
+        // Return the values from session to FileUpload 
+        else if (Session["upload"] != null && (!upload.HasFile))
+        {
+            upload = (FileUpload)Session["upload"];
+            //Label1.Text = FileUpload1.FileName;
+        }
+        // Now there could be another sictution when Session has File but user want to change the file 
+        // In this case we have to change the file in session object 
+        else if (upload.HasFile)
+        {
+            Session["upload"] = upload;
+            //Label1.Text = FileUpload1.FileName;
+        }
+        //If first time page is submitted and we have file in FileUpload control but not in session 
+        // Store the values to SEssion Object 
+        if (Session["upload2"] == null && upload2.HasFile)
+        {
+            Session["upload2"] = upload2;
+            //Label1.Text = FileUpload1.FileName;
+        }
+        // Next time submit and Session has values but FileUpload is Blank 
+        // Return the values from session to FileUpload 
+        else if (Session["upload2"] != null && (!upload2.HasFile))
+        {
+            upload2 = (FileUpload)Session["upload2"];
+            //Label1.Text = FileUpload1.FileName;
+        }
+        // Now there could be another sictution when Session has File but user want to change the file 
+        // In this case we have to change the file in session object 
+        else if (upload2.HasFile)
+        {
+            Session["upload2"] = upload2;
+            //Label1.Text = FileUpload1.FileName;
+        }
         if (IsPostBack) return;
         this.Page.Form.Enctype = "multipart/form-data";
         pnlStep2.Enabled = false;
@@ -31,7 +75,7 @@ public partial class Signup : System.Web.UI.Page
         txtEmail.Text = "";
         txtGHG.Text = "";
         txtName.Text = "";
-      
+
         txtPassword.Attributes["value"] = txtPassword.Text;
 
         btnNext1.BackColor = Color.SlateGray;
@@ -44,10 +88,10 @@ public partial class Signup : System.Web.UI.Page
         DrawBread();
         DrawStepText();
     }
-    /// <summary>
-    /// Make sure the form have the right data when render
-    /// </summary>
-    /// <param name="e"></param>
+    /// <summary> 
+    /// Make sure the form have the right data when render 
+    /// </summary> 
+    /// <param name="e"></param> 
     protected override void OnPreRender(EventArgs e)
     {
         base.OnPreRender(e);
@@ -56,10 +100,11 @@ public partial class Signup : System.Web.UI.Page
         {
             form.Enctype = "multipart/form-data";
         }
+        
     }
-    /// <summary>
-    /// Draw the html for the step text
-    /// </summary>
+    /// <summary> 
+    /// Draw the html for the step text 
+    /// </summary> 
     protected void DrawStepText()
     {
         litHeader.Text = "";
@@ -87,9 +132,9 @@ public partial class Signup : System.Web.UI.Page
                 break;
         }
     }
-    /// <summary>
-    /// dare the breadcrumbs so the user can see how long they are
-    /// </summary>
+    /// <summary> 
+    /// dare the breadcrumbs so the user can see how long they are 
+    /// </summary> 
     protected void DrawBread()
     {
         litBread.Text = "";
@@ -136,11 +181,11 @@ public partial class Signup : System.Web.UI.Page
                 break;
         }
     }
-    /// <summary>
-    /// THe first button event handler for step 1
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+    /// <summary> 
+    /// THe first button event handler for step 1 
+    /// </summary> 
+    /// <param name="sender"></param> 
+    /// <param name="e"></param> 
     protected void btnNext1_Click(object sender, EventArgs e)
     {
         if (!string.IsNullOrWhiteSpace(txtGHG.Text))
@@ -151,9 +196,9 @@ public partial class Signup : System.Web.UI.Page
             DrawStepText();
         }
     }
-    /// <summary>
-    /// Method to change the panel when called
-    /// </summary>
+    /// <summary> 
+    /// Method to change the panel when called 
+    /// </summary> 
     protected void PanelChanger()
     {
         _step++;
@@ -174,31 +219,40 @@ public partial class Signup : System.Web.UI.Page
                 break;
         }
     }
-    /// <summary>
-    /// step 2 button event handler
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+    /// <summary> 
+    /// step 2 button event handler 
+    /// </summary> 
+    /// <param name="sender"></param> 
+    /// <param name="e"></param> 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        _uploadName = Request.Files["upload"];
-        _upload2Name = Request.Files["upload2"];
-        PanelChanger();
-        DrawBread();
-        DrawStepText();
+
+        if (upload.FileBytes.Length > 4194304 && upload2.FileBytes.Length > 4194304)
+        {
+            Label1.Text = "Max image size allowed is 4mb, please upload a new one";
+
+        }
+        else
+        {
+            PanelChanger();
+            DrawBread();
+            DrawStepText();
+        }
+       
     }
-    /// <summary>
-    /// Last step button event handler 
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
+    /// <summary> 
+    /// Last step button event handler  
+    /// </summary> 
+    /// <param name="sender"></param> 
+    /// <param name="e"></param> 
     protected void btnSignup_OnClick(object sender, EventArgs e)
     {
         if (txtEmail.Text != "" && txtName.Text != "" && txtPassword.Text != "")
         {
             if (MailValidator.EmailIsValid(txtEmail.Text))
             {
-                _myFunction.AddSignIn(txtName.Text, txtEmail.Text, ImageUpload().Item1, ImageUpload().Item2,_ghgNumber);
+               
+                _myFunction.AddSignIn(txtName.Text, txtEmail.Text, ImageUpload().Item1, ImageUpload().Item2, _ghgNumber);
                 if (Glich.GlichEnabler)
                 {
                     _step = 0;
@@ -206,8 +260,7 @@ public partial class Signup : System.Web.UI.Page
                     txtName.Text = "";
                     txtPassword.Text = "";
                     txtPassword.Attributes["value"] = "";
-                    _uploadName = null;
-                    _upload2Name = null;
+                   
                     Response.Redirect("~/StaticNoise.aspx");
                 }
 
@@ -218,8 +271,7 @@ public partial class Signup : System.Web.UI.Page
                     txtName.Text = "";
                     txtPassword.Text = "";
                     txtPassword.Attributes["value"] = "";
-                    _uploadName = null;
-                    _upload2Name = null;
+                    
                     Response.Redirect("Default.aspx");
 
                     Label5.Text = "Thank you for supporting Arcadia. We will contact you soon with further info";
@@ -235,28 +287,28 @@ public partial class Signup : System.Web.UI.Page
             Label5.Text = "Incorrect info, please enter info in all the fields";
         }
     }
-    /// <summary>
-    /// Tuple with 2 return value for the upload image info. So the last step can set the correct name on the image
-    /// </summary>
-    /// <returns></returns>
+    /// <summary> 
+    /// Tuple with 2 return value for the upload image info. So the last step can set the correct name on the image 
+    /// </summary> 
+    /// <returns></returns> 
     protected Tuple<string, string> ImageUpload()
     {
         string highfileName = "";
 
         string lowFileName = "";
 
-        //check if files was submitted
-        if (_uploadName != null && _uploadName.ContentLength > 0 && _upload2Name != null && _upload2Name.ContentLength > 0)
+        //check if files was submitted 
+        if (upload != null && upload.HasFile && upload2 != null && upload2.HasFile)
         {
-            //high save method
-            string fileNameExtension = Path.GetExtension(_uploadName.FileName);
+            //high save method 
+            string fileNameExtension = Path.GetExtension(upload.FileName);
             string highName = $"high{txtName.Text}{fileNameExtension}";
-            _uploadName.SaveAs(Server.MapPath(Path.Combine("~/Image_Upload/", highName)));
+            upload.SaveAs(Server.MapPath(Path.Combine("~/Image_Upload/", highName)));
             highfileName = $"~/Image_Upload/high{txtName.Text}{fileNameExtension}";
-            //low save method
-            string lowfileNameExtension = Path.GetExtension(_upload2Name.FileName);
+            //low save method 
+            string lowfileNameExtension = Path.GetExtension(upload2.FileName);
             string lowName = $"low{txtName.Text}.{lowfileNameExtension}";
-            _upload2Name.SaveAs(Server.MapPath(Path.Combine("~/Image_Upload/", lowName)));
+            upload2.SaveAs(Server.MapPath(Path.Combine("~/Image_Upload/", lowName)));
             lowFileName = $"~/Image_Upload/low{txtName.Text}{lowfileNameExtension}";
         }
         return Tuple.Create(highfileName, lowFileName);
