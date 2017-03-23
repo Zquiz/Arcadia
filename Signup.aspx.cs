@@ -258,31 +258,40 @@ public partial class Signup : System.Web.UI.Page
         {
             if (MailValidator.EmailIsValid(txtEmail.Text))
             {
-               
-                _myFunction.AddSignIn(txtName.Text, txtEmail.Text, ImageUpload().Item1, ImageUpload().Item2, _ghgNumber);
-                if (Glich.GlichEnabler)
+                if (!_myFunction.CheckUserExist(txtName.Text.ToLower().Trim()))
                 {
-                    _step = 0;
-                    txtEmail.Text = "";
-                    txtName.Text = "";
-                    txtPassword.Text = "";
-                    txtPassword.Attributes["value"] = "";
+                    _myFunction.AddSignIn(txtName.Text.ToLower().Trim(), txtEmail.Text.ToLower().Trim(), ImageUpload().Item1, ImageUpload().Item2, _ghgNumber);
+                    if (Glich.GlichEnabler)
+                    {
+                        _step = 0;
+                        txtEmail.Text = "";
+                        txtName.Text = "";
+                        txtPassword.Text = "";
+                        txtPassword.Attributes["value"] = "";
+
+                        Response.Redirect("~/StaticNoise.aspx");
+                    }
+
+                    if (!Glich.GlichEnabler)
+                    {
+                        _step = 0;
+                        txtEmail.Text = "";
+                        txtName.Text = "";
+                        txtPassword.Text = "";
+                        txtPassword.Attributes["value"] = "";
+
+                        Response.Redirect("Default.aspx");
+
+                        Label5.Text = "Thank you for supporting Arcadia. We will contact you soon with further info";
+                    }
                    
-                    Response.Redirect("~/StaticNoise.aspx");
                 }
-
-                if (!Glich.GlichEnabler)
+                else
                 {
-                    _step = 0;
-                    txtEmail.Text = "";
-                    txtName.Text = "";
-                    txtPassword.Text = "";
-                    txtPassword.Attributes["value"] = "";
-                    
-                    Response.Redirect("Default.aspx");
-
-                    Label5.Text = "Thank you for supporting Arcadia. We will contact you soon with further info";
+                    Label5.Text = "Sorry that name has already signed up";
                 }
+
+
             }
             else
             {

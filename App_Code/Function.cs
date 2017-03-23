@@ -42,7 +42,7 @@ public class Function
     //Ask the database if the person exist. if it do return true else false
     public bool CheckUserExist(string username)
     {
-        MySqlCommand check = new MySqlCommand($"select * from tbluser where fldUserName='{username}'");
+        MySqlCommand check = new MySqlCommand($"select * from tblsignup where fldName='{username}'");
         DataTable checkTable = _dbConnection.GetData(check);
         if (checkTable.Rows.Count == 1)
         {

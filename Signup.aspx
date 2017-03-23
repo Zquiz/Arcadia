@@ -202,7 +202,7 @@
                             <div style="float: left">
 
                                 <div class="BE-A-PART-OF-THE-FUT" style="margin: -13px 0 130px 154px;">BE A PART OF THE FUTURE</div>
-                                <div style="float: right; margin-right: 50px;">
+                                <div style="float: right; margin-right: 50px;" class="ipadButtonStep3">
                                     <asp:Button ID="btnSignup" runat="server" Text="DONE" CssClass="Signup" BorderStyle="None" Font-Names="OratorStd" Font-Size="Large" ForeColor="White" OnClick="btnSignup_OnClick"/>
                                 </div>
                             </div>

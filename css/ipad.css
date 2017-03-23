@@ -1085,3 +1085,6 @@ body::-webkit-scrollbar-thumb {
 body.modal-open {
     overflow: hidden;
 }
+.ipadButtonStep3 {
+    margin-top: 50px;
+}
