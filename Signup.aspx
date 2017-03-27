@@ -100,10 +100,10 @@
                         <asp:Literal ID="litBread" runat="server"></asp:Literal>
                         <asp:Literal ID="litHeader" runat="server"></asp:Literal>
                         <asp:Panel ID="pnlStep1" runat="server">
-
-                            <div style="overflow: hidden; margin: 0 auto; width: 1004px;">
+                            <div>
                                 <div id="bill">
-                                    <iframe scrolling="no" src="http://www.livesmartbc.ca/homes/h_calc.html" style="border: 0px none; margin-left: -166px; height: 796px; margin-right: 16px; margin-top: -277px; width: 783px; float: left;"></iframe>
+                               <iframe width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="http://calculator.carbonfootprint.com/calculator.aspx" style="float: left; margin: 0 25px 0 0"></iframe>
+
                                     <div class="tipBox">
                                         <div class="tipBoxHeader">Ways to reduce your carbon footprint:</div>
                                         <div class="tipBoxUnderheader">Switch from incandescent to compact fluorescent light bulbs (CFLs)</div>
