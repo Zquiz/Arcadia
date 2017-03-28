@@ -23,10 +23,7 @@
     <form id="form1" runat="server" autocomplete="off">
         <div id="textarea">
             <asp:ScriptManager runat="server" ID="ScriptManager"></asp:ScriptManager>
-          <%--  <asp:UpdatePanel runat="server">
-
-                <ContentTemplate>--%>
-
+      
                     <asp:Timer ID="Timer1" runat="server" Interval="3000" Enabled="False" OnTick="Timer1_Tick">
                     </asp:Timer>
            
@@ -44,11 +41,10 @@
                    
                     <div class="fieldcontainer" style="visibility: hidden;">
                         <asp:Button ID="btnSend" runat="server" Text="Answer" CssClass="button" OnClick="btnSend_OnClick"></asp:Button>
-<%--                        <asp:TextBox ID="txtmsg" runat="server" CssClass="textbox"></asp:TextBox>--%>
+
                     </div>
                 </div>
-              <%--  </ContentTemplate>
-            </asp:UpdatePanel>--%>
+          
             
        
     </form>

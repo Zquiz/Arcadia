@@ -10,9 +10,10 @@ public partial class Signup : System.Web.UI.Page
 {
     //Reason fields are static is because of the update panels postback 
     private static int _step;
+    private static decimal _ghgNumber;
+
     private readonly Function _myFunction = new Function();
     
-    private static int _ghgNumber;
     string highfileName = "";
 
     string lowFileName = "";
@@ -190,7 +191,7 @@ public partial class Signup : System.Web.UI.Page
     {
         if (!string.IsNullOrWhiteSpace(txtGHG.Text))
         {
-            _ghgNumber = Convert.ToInt32(txtGHG.Text);
+            _ghgNumber = Convert.ToDecimal(txtGHG.Text);
             PanelChanger();
             DrawBread();
             DrawStepText();

@@ -3,33 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
     <script>
-        function validateFloatKeyPress(el, evt) {
-            var charCode = (evt.which) ? evt.which : event.keyCode;
-            var number = el.value.split('.');
-            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) {
-                return false;
-            }
-
-            if (number.length > 1 && charCode == 46) {
-                return false;
-            }
-            //get the carat position
-            var caratPos = getSelectionStart(el);
-            var dotPos = el.value.indexOf(".");
-            if (caratPos > dotPos && dotPos > -1 && (number[1].length > 1)) {
-                return false;
+        function isNumberKey(evt, txt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode === 46) {
+                //Check if the text already contains the . character
+                if (txt.value.indexOf('.') === -1) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                if (charCode > 31
+                    && (charCode < 48 || charCode > 57))
+                    return false;
             }
             return true;
-        }
-
-        //thanks: http://javascript.nwbox.com/cursor_position/
-        function getSelectionStart(o) {
-            if (o.createTextRange) {
-                var r = document.selection.createRange().duplicate()
-                r.moveEnd('character', o.value.length)
-                if (r.text == '') return o.value.length
-                return o.value.lastIndexOf(r.text)
-            } else return o.selectionStart
         }
 
         //step 2
@@ -111,7 +99,7 @@
                                     </div>
                                     <div>
                                         <div class="CFtextboxheader">TONNES OF GHG PER YEAR:</div>
-                                        <asp:TextBox ID="txtGHG" runat="server" CssClass="CFTextbox" Font-Size="24px" ForeColor="#39393A" AutoCompleteType="Disabled" Font-Bold="True" Font-Names="OratorStd" onkeypress="return validateFloatKeyPress(this,event);" pattern="[0-9]*" inputmode="numeric"></asp:TextBox>
+                                        <asp:TextBox ID="txtGHG" runat="server" CssClass="CFTextbox" Font-Size="24px" ForeColor="#39393A" AutoCompleteType="Disabled" Font-Bold="True" Font-Names="OratorStd" onkeypress="return isNumberKey(event,this);"  inputmode="number"></asp:TextBox>
 
                                         <asp:Button ID="btnNext1" runat="server" Text="NEXT" CssClass="Nextsignup" Font-Bold="True" Font-Names="OratorStd" Font-Size="17px" ForeColor="White" BorderStyle="None" OnClick="btnNext1_Click"/>
                                     </div>

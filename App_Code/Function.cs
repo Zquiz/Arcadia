@@ -72,7 +72,7 @@ public class Function
     /// <param name="highImage"></param>
     /// <param name="lowImage"></param>
     /// <param name="ghg"></param>
-    public void AddSignIn(string name, string mail, string highImage, string lowImage, int ghg)
+    public void AddSignIn(string name, string mail, string highImage, string lowImage, decimal ghg)
     {
             MySqlCommand cmd = new MySqlCommand(
                 $"Insert into tblsignup(fldName, fldMail, fldLowImage, fldHighImage, fldGHG) VALUES('{name}', '{mail}', '{lowImage}', '{highImage}', '{ghg}')");
