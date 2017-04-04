@@ -55,7 +55,7 @@ public partial class Puzzle : Page
             case 3:
                 return $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;:Is anyone listening? URGENT!<br />//<br />///";
             case 4:
-                Timer1.Interval = 500;
+                Timer1.Interval = 200;
                 return "Commands:<br />Yes<br />No<br />";
 
             case 5:
@@ -87,6 +87,7 @@ public partial class Puzzle : Page
                 return
                     $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;: My name is ART3MI5 and I work for Arcadia. Things are not what they seem.";
             case 9:
+                Timer1.Interval = 200;
                 return $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;:I need you to trust me. Do you trust me?";
             case 10:
                 command.Value = null;
@@ -116,13 +117,13 @@ public partial class Puzzle : Page
                     $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;:Good, you shouldn’t be so trusting. I know you don’t know me but I will win your trust.<br />/<br />/<br />/";
             case 13:
                 return
-                    $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;: I can prove this to you. But it’s not safe here.<br />/<br />/<br />/";
+                    $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;: It’s not safe here. I Have created a secure space for us to communicate. Your codename is: CODENAME and use the password “password” to enter.<br />/<br />/<br />/";
             case 14:
                 return $"{DateTime.Now:HH:mm}&lt;art3mi5&gt;: Please await further instructions.";
             case 15:
                 Timer1.Enabled = false;
                 command.Disabled = false;
-                Response.AppendHeader("Refresh", "5;URL=Default.aspx");
+                Response.AppendHeader("Refresh", "10;URL=Default.aspx");
                 return "logging off";
 
 
