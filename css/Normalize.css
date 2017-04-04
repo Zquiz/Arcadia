@@ -7,10 +7,10 @@
 /* Document
    ========================================================================== */
 html {
-    font-family: sans-serif; /* 1 */
-    line-height: 1.15; /* 2 */
     -ms-text-size-adjust: 100%; /* 3 */
     -webkit-text-size-adjust: 100%; /* 3 */
+    font-family: sans-serif; /* 1 */
+    line-height: 1.15; /* 2 */
 }
 
 /* Sections
@@ -20,9 +20,7 @@ html {
  * Remove the margin in all browsers (opinionated).
  */
 
-body {
-    margin: 0;
-}
+body { margin: 0; }
 
 /**
  * Add the correct display in IE 9-.
@@ -33,9 +31,7 @@ aside,
 footer,
 header,
 nav,
-section {
-    display: block;
-}
+section { display: block; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -65,9 +61,7 @@ main { /* 1 */
  * Add the correct margin in IE 8.
  */
 
-figure {
-    margin: 1em 40px;
-}
+figure { margin: 1em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -99,19 +93,17 @@ pre {
  */
 
 a {
-    background-color: transparent; /* 1 */
     -webkit-text-decoration-skip: objects; /* 2 */
+    background-color: transparent; /* 1 */
 }
 
-    /**
+/**
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
 
-    a:active,
-    a:hover {
-        outline-width: 0;
-    }
+a:active,
+a:hover { outline-width: 0; }
 
 /**
  * 1. Remove the bottom border in Firefox 39-.
@@ -129,18 +121,14 @@ abbr[title] {
  */
 
 b,
-strong {
-    font-weight: inherit;
-}
+strong { font-weight: inherit; }
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
 b,
-strong {
-    font-weight: bolder;
-}
+strong { font-weight: bolder; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -158,9 +146,7 @@ samp {
  * Add the correct font style in Android 4.3-.
  */
 
-dfn {
-    font-style: italic;
-}
+dfn { font-style: italic; }
 
 /**
  * Add the correct background and color in IE 9-.
@@ -175,9 +161,7 @@ mark {
  * Add the correct font size in all browsers.
  */
 
-small {
-    font-size: 80%;
-}
+small { font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` elements from affecting the line height in
@@ -192,13 +176,9 @@ sup {
     vertical-align: baseline;
 }
 
-sub {
-    bottom: -0.25em;
-}
+sub { bottom: -0.25em; }
 
-sup {
-    top: -0.5em;
-}
+sup { top: -0.5em; }
 
 /* Embedded content
    ========================================================================== */
@@ -208,34 +188,28 @@ sup {
  */
 
 audio,
-video {
-    display: inline-block;
-}
+video { display: inline-block; }
 
-    /**
+/**
  * Add the correct display in iOS 4-7.
  */
 
-    audio:not([controls]) {
-        display: none;
-        height: 0;
-    }
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
 
 /**
  * Remove the border on images inside links in IE 10-.
  */
 
-img {
-    border-style: none;
-}
+img { border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
 
-svg:not(:root) {
-    overflow: hidden;
-}
+svg:not(:root) { overflow: hidden; }
 
 /* Forms
    ========================================================================== */
@@ -289,28 +263,26 @@ html [type="button"], /* 1 */
     -webkit-appearance: button; /* 2 */
 }
 
-    /**
+/**
  * Remove the inner border and padding in Firefox.
  */
 
-    button::-moz-focus-inner,
-    [type="button"]::-moz-focus-inner,
-    [type="reset"]::-moz-focus-inner,
-    [type="submit"]::-moz-focus-inner {
-        border-style: none;
-        padding: 0;
-    }
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
 
-    /**
+/**
  * Restore the focus styles unset by the previous rule.
  */
 
-    button:-moz-focusring,
-    [type="button"]:-moz-focusring,
-    [type="reset"]:-moz-focusring,
-    [type="submit"]:-moz-focusring {
-        outline: 1px dotted ButtonText;
-    }
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
 
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
@@ -352,9 +324,7 @@ progress {
  * Remove the default vertical scrollbar in IE.
  */
 
-textarea {
-    overflow: auto;
-}
+textarea { overflow: auto; }
 
 /**
  * 1. Add the correct box sizing in IE 10-.
@@ -372,9 +342,7 @@ textarea {
  */
 
 [type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-    height: auto;
-}
+[type="number"]::-webkit-outer-spin-button { height: auto; }
 
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
@@ -386,14 +354,12 @@ textarea {
     outline-offset: -2px; /* 2 */
 }
 
-    /**
+/**
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
 
-    [type="search"]::-webkit-search-cancel-button,
-    [type="search"]::-webkit-search-decoration {
-        -webkit-appearance: none;
-    }
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -414,17 +380,13 @@ textarea {
  */
 
 details, /* 1 */
-menu {
-    display: block;
-}
+menu { display: block; }
 
 /*
  * Add the correct display in all browsers.
  */
 
-summary {
-    display: list-item;
-}
+summary { display: list-item; }
 
 /* Scripting
    ========================================================================== */
@@ -433,17 +395,13 @@ summary {
  * Add the correct display in IE 9-.
  */
 
-canvas {
-    display: inline-block;
-}
+canvas { display: inline-block; }
 
 /**
  * Add the correct display in IE.
  */
 
-template {
-    display: none;
-}
+template { display: none; }
 
 /* Hidden
    ========================================================================== */
@@ -452,6 +410,4 @@ template {
  * Add the correct display in IE 10-.
  */
 
-[hidden] {
-    display: none;
-}
+[hidden] { display: none; }

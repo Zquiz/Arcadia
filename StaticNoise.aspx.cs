@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Web.UI;
 
-public partial class StaticNoise : System.Web.UI.Page
+public partial class StaticNoise : Page
 {
     /// <summary>
-    /// Page load event handler. Will redirect the user after 5 seconds 
+    ///     Page load event handler. Will redirect the user after 5 seconds
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

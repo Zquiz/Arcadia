@@ -13,8 +13,7 @@
                     return false;
                 }
             } else {
-                if (charCode > 31
-                    && (charCode < 48 || charCode > 57))
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
                     return false;
             }
             return true;
@@ -63,13 +62,13 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="Filter_overlay-Copy" style="float: left; background: url(Graphic/website3.png) no-repeat; background-size: cover;">
+    <div class="Filter_overlay-Copy" style="background: url(Graphic/website3.png) no-repeat; background-size: cover; float: left;">
 
         <div class="A-MODEL-WORLD-TO-LIV-container">
 
-            <div class="A-MODEL-WORLD-TO-LIV " style="float: left; width: 1100px; height: 317px;">
-                <div class="StepHeader" style="float: left; font-size: 48px; text-align: left; margin-left: 138px;">A SIMPLE 3 STEP PROCESS</div>
-                <div class="A-MODEL-WORLD-TO-LIV-text" style="position: absolute; float: left; font-size: 17.6px; text-align: left; line-height: 2.56; font-family: Calibri; letter-spacing: normal;  margin-left: 138px; margin-top: 78px;">
+            <div class="A-MODEL-WORLD-TO-LIV " style="float: left; height: 317px; width: 1100px;">
+                <div class="StepHeader" style="float: left; font-size: 48px; margin-left: 138px; text-align: left;">A SIMPLE 3 STEP PROCESS</div>
+                <div class="A-MODEL-WORLD-TO-LIV-text" style="float: left; font-family: Calibri; font-size: 17.6px; letter-spacing: normal; line-height: 2.56; margin-left: 138px; margin-top: 78px; position: absolute; text-align: left;">
                     Here at Arcadia, we need you, the applicant, to prove their ability to fit into the lifestyle and culture of Arcadia.<br/>
                     STEP 1 | Complete a Carbon Calculator<br/>
                     STEP 2 | Show us your ability to identify high and low carbon emitting products in your life<br/>
@@ -81,7 +80,7 @@
     </div>
     <div class="content">
         <div class="whiteContentfield">
-            <div style="float: left; width: 100%; min-height: 300px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <div style="align-items: center; display: flex; flex-direction: column; float: left; justify-content: center; min-height: 300px; width: 100%;">
                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 
                     <ContentTemplate>
@@ -90,7 +89,7 @@
                         <asp:Panel ID="pnlStep1" runat="server">
                             <div>
                                 <div id="bill">
-                               <iframe width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="http://calculator.carbonfootprint.com/calculator.aspx" style="float: left; margin: 0 25px 0 0"></iframe>
+                                    <iframe width="710" height="1300" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="http://calculator.carbonfootprint.com/calculator.aspx" style="float: left; margin: 0 25px 0 0"></iframe>
 
                                     <div class="tipBox">
                                         <div class="tipBoxHeader">Ways to reduce your carbon footprint:</div>
@@ -99,7 +98,7 @@
                                     </div>
                                     <div>
                                         <div class="CFtextboxheader">TONNES OF GHG PER YEAR:</div>
-                                        <asp:TextBox ID="txtGHG" runat="server" CssClass="CFTextbox" Font-Size="24px" ForeColor="#39393A" AutoCompleteType="Disabled" Font-Bold="True" Font-Names="OratorStd" onkeypress="return isNumberKey(event,this);"  inputmode="number"></asp:TextBox>
+                                        <asp:TextBox ID="txtGHG" runat="server" CssClass="CFTextbox" Font-Size="24px" ForeColor="#39393A" AutoCompleteType="Disabled" Font-Bold="True" Font-Names="OratorStd" onkeypress="return isNumberKey(event,this);" inputmode="number"></asp:TextBox>
 
                                         <asp:Button ID="btnNext1" runat="server" Text="NEXT" CssClass="Nextsignup" Font-Bold="True" Font-Names="OratorStd" Font-Size="17px" ForeColor="White" BorderStyle="None" OnClick="btnNext1_Click"/>
                                     </div>
@@ -109,55 +108,52 @@
 
                         <asp:Panel ID="pnlStep2" runat="server" Visible="False">
 
-                            <div style="width: 100%; display: flex; flex-direction: row; justify-content: center;">
+                            <div style="display: flex; flex-direction: row; justify-content: center; width: 100%;">
                                 <div class="signupImage" style="background: url(Graphic/signupImage1.png) no-repeat; background-size: contain;">
                                 </div>
                                 <div class="signupImage" style="background: url(Graphic/signupImage2.png) no-repeat; background-size: contain;">
                                 </div>
                                 <div class="signupImage" style="background: url(Graphic/signupImage3.png) no-repeat; background-size: contain;">
                                 </div>
-                                <div class="signupImage" style="margin-right: 0; background: url(Graphic/signupImage4.png) no-repeat; background-size: contain;">
+                                <div class="signupImage" style="background: url(Graphic/signupImage4.png) no-repeat; background-size: contain; margin-right: 0;">
                                 </div>
                             </div>
                             <div>
-                                <div style=" float: left;width: 72%;display: flex;flex-direction: row;justify-content: center;align-items: center;">
+                                <div style="align-items: center; display: flex; flex-direction: row; float: left; justify-content: center; width: 72%;">
                                     <div style="float: left; width: 78%;">
                                         <div class="STEPTEXT">HIGH CARBON EMITTING PRODUCT</div>
 
-                                    <div class="Imageuploadbox">
-                                        <asp:FileUpload type="file" id="upload" ViewStateMode="Enabled" name="upload" accept="image/*" style="opacity: 0; width: 355px; height: 122px; float: left; position: absolute; z-index: 3;" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" runat="server"/>
+                                        <div class="Imageuploadbox">
+                                            <asp:FileUpload type="file" id="upload" ViewStateMode="Enabled" name="upload" accept="image/*" style="float: left; height: 122px; opacity: 0; position: absolute; width: 355px; z-index: 3;" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])" runat="server"/>
 
-                                        <img id="output" alt="" style="width: 352px; height: 119px; position: absolute; float: left; object-fit: contain;"/>
-                                        <div class="Imageuploadboxmiddle">
+                                            <img id="output" alt="" style="float: left; height: 119px; object-fit: contain; position: absolute; width: 352px;"/>
+                                            <div class="Imageuploadboxmiddle">
 
-                                            <div class="Imageuploadboxarrow"></div>
+                                                <div class="Imageuploadboxarrow"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                      <div style="float: right; width: 0%">
-                                    <div class="STEPTEXT" style="width: 450px;">LOW CARBON EMITTING PRODUCT</div>
-                                    <div class="Imageuploadbox">
-                                        <asp:FileUpload type="file" id="upload2" name="upload2" ViewStateMode="Enabled" accept="image/*" style="opacity: 0; width: 355px; height: 122px; float: left; position: absolute; z-index: 3;" onchange="document.getElementById('output2').src = window.URL.createObjectURL(this.files[0])" runat="server"/>
+                                    <div style="float: right; width: 0%">
+                                        <div class="STEPTEXT" style="width: 450px;">LOW CARBON EMITTING PRODUCT</div>
+                                        <div class="Imageuploadbox">
+                                            <asp:FileUpload type="file" id="upload2" name="upload2" ViewStateMode="Enabled" accept="image/*" style="float: left; height: 122px; opacity: 0; position: absolute; width: 355px; z-index: 3;" onchange="document.getElementById('output2').src = window.URL.createObjectURL(this.files[0])" runat="server"/>
 
-                                        <img id="output2" alt="" style="width: 352px; height: 119px; position: absolute; float: left; object-fit: contain;"/>
-                                        <div class="Imageuploadboxmiddle">
+                                            <img id="output2" alt="" style="float: left; height: 119px; object-fit: contain; position: absolute; width: 352px;"/>
+                                            <div class="Imageuploadboxmiddle">
 
-                                            <div class="Imageuploadboxarrow"></div>
+                                                <div class="Imageuploadboxarrow"></div>
+                                            </div>
                                         </div>
+
                                     </div>
 
                                 </div>
-                                
-                                </div>
-                                
-                                
 
-                              
 
                                 <asp:Button ID="Button1" runat="server" Text="NEXT" CssClass="Nextsignup2" Font-Bold="True" Font-Names="OratorStd" Font-Size="17px" ForeColor="White" BorderStyle="None" OnClick="Button1_Click"/>
-                            
+
                             </div>
-                            <div style="float: left;text-align: center;width: 100%;margin-top: -108px;">
+                            <div style="float: left; margin-top: -108px; text-align: center; width: 100%;">
                                 <asp:Label ID="Label1" runat="server" Text="" CssClass="STEPTEXT"></asp:Label>
 
                             </div>
@@ -167,7 +163,7 @@
                         <asp:Panel ID="pnlStep3" runat="server" Visible="False">
 
                             <div style="float: left">
-                                <div style="height: 536px; margin-top: 24px; float: left;">
+                                <div style="float: left; height: 536px; margin-top: 24px;">
                                     <div class="NAME">NAME</div>
                                     <div class="EMAIL" style="margin-top: 76px;">EMAIL</div>
                                     <div class="PASSWORD" style="margin-top: 79px;">PASSWORD</div>

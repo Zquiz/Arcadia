@@ -18,6 +18,7 @@ public partial class Puzzle : Page
     {
         if (IsPostBack) return;
         ResetTerminal();
+        
     }
 
     /// <summary>

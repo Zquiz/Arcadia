@@ -6,8 +6,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
     }
+
     /// <summary>
-    /// button event handler
+    ///     button event handler
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -15,8 +16,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("Signup.aspx");
     }
+
     /// <summary>
-    /// Method that will overrid the oninit and give the correct css and metatag for the system people are seeing the webpage in
+    ///     Method that will overrid the oninit and give the correct css and metatag for the system people are seeing the
+    ///     webpage in
     /// </summary>
     /// <param name="e"></param>
     protected override void OnInit(EventArgs e)
@@ -43,7 +46,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             Page.Header.Controls.Add(css);
             //meta.Name = "viewport";
             //meta.Content = "width=device-width, maximum-scale=1.0";
-           // Page.Header.Controls.Add(meta);
+            // Page.Header.Controls.Add(meta);
         }
         else
         {

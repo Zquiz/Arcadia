@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Net.Mail;
+using System.Web.UI;
 
-public partial class Contact : System.Web.UI.Page
+public partial class Contact : Page
 {
     //random value for the message system
     private Random _random;
@@ -9,8 +10,9 @@ public partial class Contact : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
     }
+
     /// <summary>
-    /// Method for the eventhandler on the button
+    ///     Method for the eventhandler on the button
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -19,12 +21,12 @@ public partial class Contact : System.Web.UI.Page
         //try catch to make sure it won't do a error when sending the mail. if pop3 is missin on the server
         try
         {
-            if (MailValidator.EmailIsValid(txtEmail.Text))//validate mail
+            if (MailValidator.EmailIsValid(txtEmail.Text)) //validate mail
             {
                 _random = new Random();
 
-                int randomNumber = _random.Next(0, 2);
-                MailMessage mailMessage = new MailMessage();
+                var randomNumber = _random.Next(0, 2);
+                var mailMessage = new MailMessage();
                 mailMessage.To.Add(txtEmail.Text);
                 mailMessage.From = new MailAddress("noreply@Arcadia.ca");
                 //send a mail to the person who wrote instanely with a random respone. 
@@ -40,7 +42,7 @@ public partial class Contact : System.Web.UI.Page
                     mailMessage.Subject = txtSubject.Text.Trim();
                     mailMessage.Body = txtMsg.Text.Trim();
                 }
-                SmtpClient smtpClient = new SmtpClient("smtp.your-isp.com");
+                var smtpClient = new SmtpClient("smtp.your-isp.com");
                 smtpClient.Send(mailMessage);
                 litError.Text = "E-mail sent!";
             }
@@ -49,7 +51,7 @@ public partial class Contact : System.Web.UI.Page
                 litError.Text = "Invalid e-mail adresse";
             }
         }
-        catch (Exception )
+        catch (Exception)
         {
             litError.Text = "An error happen and the mail wasn't able to get send, please try again later";
         }
