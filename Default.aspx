@@ -73,7 +73,7 @@
     </div>
 </div>
 
-<div style="left: 49%; margin-top: 600px; position: absolute; text-align: center; z-index: 2;">
+<div class="dotcontainer">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>

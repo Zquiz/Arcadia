@@ -1052,3 +1052,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 body.modal-open { overflow: hidden; }
+
+.dotcontainer {
+    left: 49%;
+    margin-top: 600px;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+}

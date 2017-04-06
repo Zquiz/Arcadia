@@ -1079,3 +1079,11 @@ body::-webkit-scrollbar-thumb {
 body.modal-open { overflow: hidden; }
 
 .ipadButtonStep3 { margin-top: 50px; }
+
+.dotcontainer {
+    left: 72%;
+    margin-top: 600px;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+}
