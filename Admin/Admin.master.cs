@@ -19,10 +19,10 @@ public partial class Admin_Admin : MasterPage
         if (Request.IsAuthenticated)
             LoginStatus1.Visible = true;
         //the enable/disable button 
-        if (Glich.GlichEnabler)
-            btnGlich.Text = "Disable glich";
-        else if (!Glich.GlichEnabler)
-            btnGlich.Text = "Enable glich";
+        if (Glitch.GlichEnabler)
+            btnGlich.Text = "Disable Glitch";
+        else if (!Glitch.GlichEnabler)
+            btnGlich.Text = "Enable Glitch";
     }
 
     /// <summary>
@@ -33,15 +33,15 @@ public partial class Admin_Admin : MasterPage
     protected void btnGlich_Click(object sender, EventArgs e)
     {
         if (IsPostBack)
-            if (Glich.GlichEnabler)
+            if (Glitch.GlichEnabler)
             {
-                Glich.GlichEnabler = false;
-                btnGlich.Text = "Enable glich";
+                Glitch.GlichEnabler = false;
+                btnGlich.Text = "Enable Glitch";
             }
-            else if (!Glich.GlichEnabler)
+            else if (!Glitch.GlichEnabler)
             {
-                Glich.GlichEnabler = true;
-                btnGlich.Text = "Disable glich";
+                Glitch.GlichEnabler = true;
+                btnGlich.Text = "Disable Glitch";
             }
     }
 }

@@ -26,24 +26,21 @@
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
 
-                                                <asp:Timer ID="Timer1" runat="server" Interval="3000" Enabled="False" OnTick="Timer1_Tick">        </asp:Timer>
+                <asp:Timer ID="Timer1" runat="server" Interval="3000" Enabled="False" OnTick="Timer1_Tick"> </asp:Timer>
 
             </ContentTemplate>
             <Triggers>
-                <asp:PostBackTrigger ControlID="Timer1" />
-                
+                <asp:PostBackTrigger ControlID="Timer1"/>
+
 
             </Triggers>
         </asp:UpdatePanel>
 
         <div id="console" class="console">
             <span class="form"></span>
-           <%-- <asp:UpdatePanel runat="server">
-                <ContentTemplate>--%>
-                                <asp:Literal ID="Literal1" runat="server"></asp:Literal>
 
-              <%--  </ContentTemplate>
-            </asp:UpdatePanel>--%>
+            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
             <div id="cmd">
                 <span></span>
                 <div id="cursor"></div>

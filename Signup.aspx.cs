@@ -244,7 +244,7 @@ public partial class Signup : Page
                 {
                     _myFunction.AddSignIn(txtName.Text.ToLower().Trim(), txtEmail.Text.ToLower().Trim(),
                         ImageUpload().Item1, ImageUpload().Item2, _ghgNumber);
-                    if (Glich.GlichEnabler)
+                    if (Glitch.GlichEnabler)
                     {
                         _step = 0;
                         txtEmail.Text = "";
@@ -255,7 +255,7 @@ public partial class Signup : Page
                         Response.Redirect("~/StaticNoise.aspx");
                     }
 
-                    if (!Glich.GlichEnabler)
+                    if (!Glitch.GlichEnabler)
                     {
                         _step = 0;
                         txtEmail.Text = "";
